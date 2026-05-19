@@ -32,6 +32,4 @@ public class StockDto {
 
     private BookMst bookMst;
 
-    private List<RentalManage> rentalManages;
-
 }

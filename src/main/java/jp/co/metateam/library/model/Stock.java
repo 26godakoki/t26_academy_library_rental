@@ -41,8 +41,6 @@ public class Stock {
     @JoinColumn(name = "book_id", referencedColumnName = "id", nullable = false)
     private BookMst bookMst;
 
-    @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<RentalManage> rentalManages = new ArrayList<>();
 
     /** Getters */
 
@@ -66,9 +64,6 @@ public class Stock {
         return bookMst;
     }
 
-    public List<RentalManage> getRentalManages() {
-        return rentalManages;
-    }
 
     /** Setters */
 
@@ -92,7 +87,4 @@ public class Stock {
         this.bookMst = bookMst;
     }
 
-    public void setRentalManages(List<RentalManage> rentalManages) {
-        this.rentalManages = rentalManages;
-    }
 }

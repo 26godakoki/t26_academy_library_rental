@@ -32,9 +32,6 @@ public class Account {
     @Column(name = "authorization_type", nullable = false)
     private Integer authorizationType;
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    public List<RentalManage> rentalManages;
-
     /** Getters */
 
     public String getEmployeeId() {
@@ -55,10 +52,6 @@ public class Account {
 
     public Integer getAuthorizationType() {
         return authorizationType;
-    }
-
-    public List<RentalManage> getRentalManages() {
-        return rentalManages;
     }
 
     /** Setters */
@@ -83,7 +76,4 @@ public class Account {
         this.authorizationType = authorizationType;
     }
 
-    public void setRentalManages(List<RentalManage> rentalManages) {
-        this.rentalManages = rentalManages;
-    }
 }

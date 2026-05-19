@@ -11,22 +11,7 @@
             <div th:replace="~{common :: header}"></div>
             <div class="inner_contens">
                 <div class="page_title">貸出一覧</div>
-                <div class="add_btn">
-                    <a th:href="@{/rental/add}">
-                        <span><img src="../images/icons/add.png" alt="add"/></span>
-                        <span>貸出登録</span>
-                    </a>
-                </div>
                 <table id="manage_table">
-                    <thead>
-                        <tr>
-                            <th>貸出管理番号</th>
-                            <th>書籍名</th>
-                            <th>在庫管理番号</th>
-                            <th>貸出ステータス</th>
-                            <th>貸出情報</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr th:each="rentalManage : ${rentalManageList}" th:object="${rentalManage}">
                             <td>

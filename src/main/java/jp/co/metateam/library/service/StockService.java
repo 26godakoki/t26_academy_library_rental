@@ -93,31 +93,4 @@ public class StockService {
             throw e;
         }
     }
-
-    public List<Object> generateDaysOfWeek(int year, int month, LocalDate startDate, int daysInMonth) {
-        List<Object> daysOfWeek = new ArrayList<>();
-        for (int dayOfMonth = 1; dayOfMonth <= daysInMonth; dayOfMonth++) {
-            LocalDate date = LocalDate.of(year, month, dayOfMonth);
-            DateTimeFormatter formmater = DateTimeFormatter.ofPattern("dd(E)", Locale.JAPANESE);
-            daysOfWeek.add(date.format(formmater));
-        }
-
-        return daysOfWeek;
-    }
-
-    public List<String> generateValues(Integer year, Integer month, Integer daysInMonth) {
-        // FIXME ここで各書籍毎の日々の在庫を生成する処理を実装する
-        // FIXME ランダムに値を返却するサンプルを実装している
-        String[] stockNum = {"1", "2", "3", "4", "×"};
-        Random rnd = new Random();
-        List<String> values = new ArrayList<>();
-        values.add("スッキリわかるJava入門 第4版"); // 対象の書籍名
-        values.add("10"); // 対象書籍の在庫総数
-        
-        for (int i = 1; i <= daysInMonth; i++) {
-            int index = rnd.nextInt(stockNum.length);
-            values.add(stockNum[index]);
-        }
-        return values;
-    }
 }

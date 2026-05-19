@@ -37,13 +37,8 @@
                                 </div>
                             </td>
                             <td th:text="*{bookMst.title}"></td>
-                            <td th:text="${stock.status == 0 && (#lists.isEmpty(stock.rentalManages) || stock.rentalManages[0].status != 1) ? '利用可' : '利用不可'}"></td>
-                            <td>
-                                <div th:if="${not #lists.isEmpty(stock.rentalManages)}">
-                                    <div th:text="${'利用者：' + stock.rentalManages[0].account.name}"></div>
-                                    <div th:text="${'返却予定日：' + #dates.format(stock.rentalManages[0].expectedReturnOn, ('yyyy/MM/dd'))}"></div>
-                                </div>
-                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>

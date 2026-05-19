@@ -23,7 +23,7 @@
                         <tr>
                             <th>在庫管理番号</th>
                             <th>書籍名</th>
-                            <th>在庫ステータス</th>
+                            <th>保管状態</th>
                             <th>貸出情報</th>
                         </tr>
                     </thead>
@@ -37,7 +37,7 @@
                                 </div>
                             </td>
                             <td th:text="*{bookMst.title}"></td>
-                            <td></td>
+                            <td th:text="${stock.status == 0 ? '利用可' : '利用不可'}"></td>
                             <td></td>
                         </tr>
                     </tbody>

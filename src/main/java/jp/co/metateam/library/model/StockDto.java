@@ -22,7 +22,7 @@ public class StockDto {
     @NotNull(message = "書籍名は必須です")
     private Long bookId;
 
-    @NotNull(message = "在庫ステータスは必須です")
+    @NotNull(message = "保管状態は必須です")
     private Integer status;
 
     @Positive

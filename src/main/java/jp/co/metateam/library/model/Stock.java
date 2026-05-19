@@ -26,7 +26,7 @@ public class Stock {
     @Column(name = "id")
     private String id;
 
-    /** 在庫ステータス */
+    /** 保管状態 */
     @Column(name = "status", nullable = false)
     private Integer status;
 

@@ -49,7 +49,9 @@ public class RentalService {
         // 在庫の保管状態チェック
         var stock = stockRepository.findById(dto.getStockId()).orElse(null);
         
-        if (stock == null || !"利用可".equals(stock.getStatus())) {
+        // getStatus()の戻り値（数値）が 0（利用可）ではない、または在庫自体がない場合
+        // ※ もしお使いのシステムで「利用可」が 1 で定義されている場合は、 0 を 1 に変更してください。
+        if (stock == null || stock.getStatus() != 0) {
             result.rejectValue("stockId", "error.stockStatus", "選択された在庫管理番号の保管状態が「利用可」ではないため、貸出できません");
             return false; 
         }

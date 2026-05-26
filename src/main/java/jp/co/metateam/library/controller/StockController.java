@@ -78,7 +78,7 @@ public class StockController {
             ra.addFlashAttribute("stockDto", stockDto);
             ra.addFlashAttribute("org.springframework.validation.BindingResult.stockDto", result);
 
-            return "redirect:/stock/add";
+            return "/redirect:/stock/add";
         }
     }
 
@@ -109,7 +109,7 @@ public class StockController {
             model.addAttribute("stockDto", stockDto);
         }
 
-        return "stock/edit";
+        return "/redirect:/stock/index";
     }
 
     @PostMapping("/stock/{id}/edit")
@@ -128,7 +128,7 @@ public class StockController {
             ra.addFlashAttribute("stockDto", stockDto);
             ra.addFlashAttribute("org.springframework.validation.BindingResult.stockDto", result);
 
-            return "redirect:/stock/edit";
+            return "/redirect:/stock/edit";
         }
     }
 

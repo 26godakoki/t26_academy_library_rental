@@ -23,7 +23,7 @@
 
                 <form id="stock_add_form" th:object="${stockDto}" th:action="@{/stock/add}" method="post">
                     <div class="mb30">
-                        <label for="bookSelector">書籍名<span class="text-red asterisk">＊</span></label>
+                        <label for="bookSelector">書籍名<span class="text-red asterisk">*</span></label>
                         <select id="bookSelector" class="form_input" name="bookId" placeholder="書籍名を選択" required>
                             <option value="">書籍名を選択</option>
                             <option th:each="bookMst : ${bookMstList}" th:value="${bookMst.id}"
@@ -32,7 +32,7 @@
                         <div class="error_msg" th:if="${#fields.hasErrors('bookId')}" th:errors="*{bookId}"></div>
                     </div>
                     <div class="mb30">
-                        <label for="stockMngNumber">在庫管理番号<span class="text-red asterisk">＊</span></label>
+                        <label for="stockMngNumber">在庫管理番号<span class="text-red asterisk">*</span></label>
                         <input type="text" id="stockMngNumber" class="form_input" name="id" th:value="*{id}"
                             placeholder="在庫管理番号を入力" required>
                         <div class="error_msg" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
@@ -44,7 +44,7 @@
                         <div class="error_msg" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
                     </div>
                     <div class="mb30">
-                        <label for="bookSelector">保管状態<span class="text-red asterisk">＊</span></label>
+                        <label for="bookSelector">保管状態<span class="text-red asterisk">*</span></label>
                         <select id="bookSelector" class="form_input" name="status" required>
                             <option value="">ステータスを選択</option>
                             <option th:each="status : ${stockStatus}" th:value="${status.value}"
